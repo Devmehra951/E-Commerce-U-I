@@ -1,0 +1,332 @@
+/*
+Theme Name: Ecommerce Mobile Theme
+Theme URI: https://example.com/ecommerce-mobile-theme
+Author: OpenAI
+Author URI: https://openai.com
+Description: Lightweight custom mobile-first WooCommerce homepage theme powered by ACF options.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.6
+Requires PHP: 7.4
+Text Domain: ecommerce-mobile-theme
+*/
+
+:root {
+  --color-text: #111111;
+  --color-background: #ffffff;
+  --color-surface: #f7f7f7;
+  --color-surface-alt: #f1f1f1;
+  --color-border: rgba(17, 17, 17, 0.08);
+  --color-accent: #111111;
+  --color-inverse: #ffffff;
+  --color-muted: #666666;
+  --shadow-soft: 0 18px 50px rgba(17, 17, 17, 0.08);
+  --radius-card: 24px;
+  --radius-pill: 999px;
+  --container-padding: 16px;
+  --transition-default: 220ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  transition: all var(--transition-default);
+}
+
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-main {
+  overflow: hidden;
+}
+
+.mobile-container {
+  width: min(100%, 430px);
+  margin: 0 auto;
+}
+
+.site-section {
+  padding: 24px var(--container-padding);
+}
+
+.site-section__title {
+  margin: 0 0 16px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.announcement-bar {
+  background: #000000;
+  color: var(--color-inverse);
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.site-header__branding {
+  max-width: 144px;
+}
+
+.site-header__branding img {
+  width: auto;
+  max-height: 32px;
+}
+
+.site-header__menu-button {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-background);
+  cursor: pointer;
+}
+
+.site-header__menu-button:hover,
+.site-header__menu-button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+.site-header__menu-line {
+  width: 18px;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--color-text);
+  border-radius: 999px;
+}
+
+.hero {
+  padding: 16px;
+}
+
+.hero__card {
+  position: relative;
+  min-height: 440px;
+  padding: 32px 20px;
+  border-radius: 28px;
+  background-color: #d9d9d9;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.08) 0%, rgba(17, 17, 17, 0.68) 100%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  color: var(--color-inverse);
+}
+
+.hero__eyebrow {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hero__title {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  background: var(--color-inverse);
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.hero__button:hover,
+.hero__button:focus-visible {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.brand-slider {
+  padding-top: 8px;
+}
+
+.brand-slider__track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.brand-slider__track::-webkit-scrollbar {
+  display: none;
+}
+
+.brand-slider__item {
+  flex: 0 0 112px;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-background);
+  scroll-snap-align: start;
+}
+
+.brand-slider__item img {
+  max-height: 28px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.88;
+}
+
+.new-arrivals__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+}
+
+.product-card:hover,
+.product-card:focus-within {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+
+.product-card__media {
+  aspect-ratio: 0.78;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--color-surface-alt);
+}
+
+.product-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card__title {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+.product-card__price {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.site-footer {
+  padding: 24px 16px 40px;
+  color: var(--color-muted);
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 431px) {
+  body {
+    background:
+      linear-gradient(90deg, #f6f6f6 0, #f6f6f6 calc(50% - 215px), #ffffff calc(50% - 215px), #ffffff calc(50% + 215px), #f6f6f6 calc(50% + 215px));
+  }
+}
