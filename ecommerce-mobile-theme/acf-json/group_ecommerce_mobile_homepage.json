@@ -1,0 +1,139 @@
+{
+    "key": "group_ecommerce_mobile_homepage",
+    "title": "Mobile Homepage Content",
+    "fields": [
+        {
+            "key": "field_emt_tab_announcement",
+            "label": "Announcement Bar",
+            "type": "tab"
+        },
+        {
+            "key": "field_emt_announcement_toggle",
+            "label": "Show Announcement Bar",
+            "name": "announcement_toggle",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 1
+        },
+        {
+            "key": "field_emt_announcement_text",
+            "label": "Announcement Text",
+            "name": "announcement_text",
+            "type": "text",
+            "default_value": "Free shipping on all orders over $100"
+        },
+        {
+            "key": "field_emt_tab_header",
+            "label": "Header",
+            "type": "tab"
+        },
+        {
+            "key": "field_emt_header_logo",
+            "label": "Header Logo",
+            "name": "header_logo",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_emt_tab_hero",
+            "label": "Hero",
+            "type": "tab"
+        },
+        {
+            "key": "field_emt_hero_image",
+            "label": "Hero Background Image",
+            "name": "hero_image",
+            "type": "image",
+            "return_format": "array"
+        },
+        {
+            "key": "field_emt_hero_heading",
+            "label": "Hero Heading",
+            "name": "hero_heading",
+            "type": "text",
+            "default_value": "Find clothes that match your style"
+        },
+        {
+            "key": "field_emt_hero_subheading",
+            "label": "Hero Subheading",
+            "name": "hero_subheading",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Browse premium essentials and statement pieces curated for a modern wardrobe."
+        },
+        {
+            "key": "field_emt_hero_button_text",
+            "label": "Hero Button Text",
+            "name": "hero_button_text",
+            "type": "text",
+            "default_value": "Shop now"
+        },
+        {
+            "key": "field_emt_hero_button_link",
+            "label": "Hero Button Link",
+            "name": "hero_button_link",
+            "type": "url"
+        },
+        {
+            "key": "field_emt_tab_brands",
+            "label": "Brands",
+            "type": "tab"
+        },
+        {
+            "key": "field_emt_brand_logos",
+            "label": "Brand Logos",
+            "name": "brand_logos",
+            "type": "repeater",
+            "layout": "row",
+            "button_label": "Add Brand Logo",
+            "sub_fields": [
+                {
+                    "key": "field_emt_logo_image",
+                    "label": "Logo Image",
+                    "name": "logo_image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium"
+                }
+            ]
+        },
+        {
+            "key": "field_emt_tab_arrivals",
+            "label": "New Arrivals",
+            "type": "tab"
+        },
+        {
+            "key": "field_emt_section_title",
+            "label": "Section Title",
+            "name": "section_title",
+            "type": "text",
+            "default_value": "New Arrivals"
+        },
+        {
+            "key": "field_emt_product_category",
+            "label": "Product Category",
+            "name": "product_category",
+            "type": "taxonomy",
+            "taxonomy": "product_cat",
+            "field_type": "select",
+            "return_format": "id",
+            "allow_null": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "ecommerce-mobile-theme-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+}
